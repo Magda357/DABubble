@@ -33,38 +33,36 @@
         margin: 10px 0 20px 0;
     }
 
-    .workspace_button {
+    .workspace_container {
         position: absolute;
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        top: 30vh;
-        left: 10px;
-        width: 56px;
-        height: 450px;
+        flex-direction: row;
+        top: 50vh;
+        left: -120px;
+        width: 300px;
+        height: 56px;
+        gap: 20px;
         border: 1px solid red;
+        rotate: -90deg;
+        padding: 10px;
+        background-color: #ffffff;
+
 
 
         h3 {
-            rotate: -90deg;
             color: #000000;
             font-size: 20px;
             font-weight: 500;
-            width: 100%;
             border: 1px solid blue;
             margin: 0;
-            margin-right: 10px;
-            margin-bottom: 10px; // Abstand nach unten
-
             white-space: nowrap;
 
 
         }
 
         svg {
-            rotate: -90deg; // falls das SVG auch gedreht werden soll
-            flex-shrink: 0; // verhindert Schrumpfen des SVGs
+            flex-shrink: 0;
         }
 
     }

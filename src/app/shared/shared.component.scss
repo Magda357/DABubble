@@ -1,0 +1,71 @@
+.sidebar {
+    width: 300px;
+    height: calc(100vh - 180px);
+    background-color: #ffffff !important;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 30px;
+    border: 1px solid #0849ab;
+    overflow: hidden;
+
+    .above_sidebar {
+        display: flex;
+        background-color: #ffffff;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: #000000;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 10px 0 20px 0;
+    }
+
+    .workspace_button {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 30vh;
+        left: 10px;
+        width: 56px;
+        height: 450px;
+        border: 1px solid red;
+
+
+        h3 {
+            rotate: -90deg;
+            color: #000000;
+            font-size: 20px;
+            font-weight: 500;
+            width: 100%;
+            border: 1px solid blue;
+            margin: 0;
+            margin-right: 10px;
+            margin-bottom: 10px; // Abstand nach unten
+
+            white-space: nowrap;
+
+
+        }
+
+        svg {
+            rotate: -90deg; // falls das SVG auch gedreht werden soll
+            flex-shrink: 0; // verhindert Schrumpfen des SVGs
+        }
+
+    }
+}

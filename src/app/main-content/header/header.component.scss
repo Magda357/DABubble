@@ -48,6 +48,11 @@
             pointer-events: none;
             background-color: transparent;
         }
+
+        input:focus {
+            border: 2px solid #858dbc;
+            outline: none;
+        }
     }
 
     #user_space {

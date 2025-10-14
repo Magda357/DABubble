@@ -9,7 +9,6 @@
     padding: 20px;
     margin-left: 20px;
     border-radius: 30px;
-    border: 1px solid #0849ab;
     overflow: hidden;
 
     .above_sidebar {
@@ -19,11 +18,26 @@
         justify-content: space-between;
         width: 100%;
 
+        img {
+            background-color: #ffffff;
+        }
+
+        .new_message_icon {
+            background-color: #ffffff;
+            color: #000000;
+            transition: fill 100ms ease-in;
+
+            &:hover {
+                cursor: pointer;
+                color: #444DF2;
+            }
+        }
 
         h2 {
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0;
+            background-color: #ffffff;
             color: #000000;
         }
     }
@@ -38,12 +52,17 @@
         display: flex;
         align-items: center;
         flex-direction: row;
+        background-color: #ffffff;
+
+        &.rotated {
+            transform: rotate(180deg);
+        }
+
         top: 50vh;
         left: -120px;
         width: 300px;
         height: 56px;
         gap: 20px;
-        border: 1px solid red;
         rotate: -90deg;
         padding: 10px;
         background-color: #ffffff;
@@ -54,15 +73,36 @@
             color: #000000;
             font-size: 20px;
             font-weight: 500;
-            border: 1px solid blue;
             margin: 0;
             white-space: nowrap;
+            background-color: #ffffff;
+
 
 
         }
 
-        svg {
+        .workspace_menu_icon {
             flex-shrink: 0;
+            rotate: 90deg;
+            color: #000000;
+            cursor: pointer;
+            transition: fill 100ms ease-in;
+        }
+
+        &:hover {
+            h3 {
+                cursor: pointer;
+                color: #444DF2;
+            }
+
+            .workspace_menu_icon {
+
+                cursor: pointer;
+                color: #444DF2;
+
+
+            }
+
         }
 
     }

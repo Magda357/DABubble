@@ -33,7 +33,12 @@ export class SharedComponent {
   loadChannels() {
     this.chatService.getChannels().subscribe((channels) => {
       this.channels = channels;
-      console.log('Channels loaded:', channels);
+      console.log('Geladene Channels:', channels);
+
+      // Debug: Zeige Channel-Namen in der Konsole
+      channels.forEach((channel) => {
+        console.log(`Channel ID: ${channel.id}, Name: ${channel.name}`);
+      });
     });
   }
 

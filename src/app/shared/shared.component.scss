@@ -1,7 +1,3 @@
-:host {
-    background-color: #fff !important;
-}
-
 body {
     background-color: white !important;
 }
@@ -48,10 +44,13 @@ body {
             background-color: #ffffff;
             color: #000000;
         }
+
+
     }
 
-    #channels,
-    #direkt_messages {
+    #channels {
+
+
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -60,13 +59,65 @@ body {
         padding: 5px;
         align-items: center;
         margin-top: 20px;
+
+        .channels-header {
+            display: flex;
+            gap: 10px;
+
+            h3 {
+                color: #000000;
+                font-size: 20px;
+                font-weight: 500;
+                margin: 0;
+                white-space: nowrap;
+                background-color: #ffffff;
+
+
+            }
+
+            &:hover,
+            h3:hover {
+                cursor: pointer;
+                color: #444DF2;
+            }
+
+
+
+        }
+
+        .channel_plus {
+            color: #000000;
+
+            &:hover {
+                cursor: pointer;
+                color: #444DF2;
+            }
+        }
+
+
     }
 
+    #direkt_messages {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        gap: 10px;
+        align-items: center;
+        margin-top: 20px;
+
+        &:hover {
+            cursor: pointer;
+            color: #444DF2;
+        }
+    }
 
     .channels-list,
     .direct-messages-list {
         width: 100%;
         margin-top: 10px;
+        background-color: #ffffff !important;
 
         .channel-item,
         .dm-item {
@@ -80,6 +131,7 @@ body {
 
             &:hover {
                 cursor: pointer;
+                color: #444DF2;
             }
 
             .channel-icon {
@@ -101,8 +153,8 @@ body {
             }
 
             .user-avatar {
-                width: 20px;
-                height: 20px;
+                width: 40px;
+                height: 40px;
                 border-radius: 50%;
                 margin-right: 8px;
                 overflow: hidden;
@@ -194,20 +246,9 @@ body {
 
 
 
-    h3 {
-        color: #000000;
-        font-size: 20px;
-        font-weight: 500;
-        margin: 0;
-        white-space: nowrap;
-        background-color: #ffffff;
 
-
-
-    }
 
     .workspace_menu_icon {
-        flex-shrink: 0;
         rotate: 90deg;
         color: #000000;
         cursor: pointer;

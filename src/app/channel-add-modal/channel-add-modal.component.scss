@@ -1,0 +1,119 @@
+:host {
+    background-color: #ffffff !important;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 912px;
+    height: 550px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    z-index: 1002;
+    align-items: center;
+    justify-content: start;
+    background: #ffffff !important;
+
+
+    .close_btn {
+        position: absolute;
+        background-color: transparent !important;
+        top: 20px;
+        right: 30px;
+        cursor: pointer;
+        color: black;
+
+        &:hover {
+            color: #444DF2;
+            transform: scale(1.2);
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        background: #ffffff !important;
+
+
+        h2 {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: 700;
+
+
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        input {
+            width: 95%;
+            height: 40px;
+            margin-bottom: 16px;
+            padding: 8px;
+            border-radius: 40px;
+            border: 1px solid #ADB0D9;
+            padding-left: 20px;
+
+
+            &:focus {
+                border-color: #444DF2;
+                outline: none;
+                box-shadow: 0 0 5px rgba(68, 77, 242, 0.4);
+            }
+
+
+        }
+
+        #channel_create {
+            padding: 16px 32px;
+            border-radius: 25px;
+            font-size: 16px;
+            border: none;
+            background: #444DF2;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            margin-top: 40px;
+            right: 30px;
+            bottom: 20px;
+            position: absolute;
+
+            &:hover {
+                background: #353EDC;
+                transition: transform 0.3s ease;
+                transform: scale(1.07);
+            }
+        }
+
+    }
+
+
+}
+
+.modal-content input::placeholder {
+    font-size: 18px;
+    color: #b0b0b0;
+    font-weight: 400;
+    opacity: 1;
+}

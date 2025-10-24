@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { NgIf, NgFor, CommonModule } from '@angular/common';
 import { ChatService } from '../services/chat.service';
+import { Observable } from 'rxjs';
+import { ChannelAddModalComponent } from '../channel-add-modal/channel-add-modal.component';
 
 @Component({
   selector: 'app-shared',
-  imports: [NgIf, CommonModule],
+  imports: [NgIf, CommonModule, ChannelAddModalComponent],
   standalone: true,
   templateUrl: './shared.component.html',
   styleUrl: './shared.component.scss',
@@ -21,6 +23,7 @@ export class SharedComponent {
   // UI States
   showChannels = true;
   showDirectMessages = true;
+  showAddChannelModal: any;
 
   constructor(private chatService: ChatService) {}
 

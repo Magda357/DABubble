@@ -72,7 +72,7 @@
 
         </div>
 
-        <span id="channel_adding_container">
+        <span id="channel_adding_container" (click)="showAddChannelModal= true">
             <!-- Channel hinzufügen Icon -->
             <svg class="channel_add" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -166,3 +166,8 @@
     </svg>
 
 </div>
+
+<!-- Add Channel Modal -->
+<app-channel-add-modal *ngIf="showAddChannelModal" (close)="showAddChannelModal = false"
+    (channelCreated)="loadChannels()">
+</app-channel-add-modal>

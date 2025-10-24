@@ -56,11 +56,6 @@ export class SharedComponent {
     });
   }
 
-  toggleWorkspace() {
-    this.isWorkspaceOpen = !this.isWorkspaceOpen;
-    this.showHiddenComponent = !this.showHiddenComponent;
-  }
-
   toggleChannels() {
     this.showChannels = !this.showChannels;
   }
@@ -77,5 +72,27 @@ export class SharedComponent {
   selectUser(user: any) {
     console.log('User selected:', user);
     // Hier kannst du Event Emitter oder Service verwenden
+  }
+
+  toggleWorkspace(event?: Event) {
+    // Event Propagation stoppen
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+
+    this.isWorkspaceOpen = !this.isWorkspaceOpen;
+    this.showHiddenComponent = !this.showHiddenComponent;
+
+    console.log('Workspace toggled:', this.isWorkspaceOpen);
+  }
+
+  // Separate Methode für Container-Click (falls gewünscht)
+  onWorkspaceContainerClick(event: Event) {
+    // Nur reagieren wenn nicht auf das Icon geklickt wurde
+    const target = event.target as HTMLElement;
+    if (!target.closest('.workspace_menu_icon')) {
+      this.toggleWorkspace(event);
+    }
   }
 }

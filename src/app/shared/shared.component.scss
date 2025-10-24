@@ -52,7 +52,6 @@
         padding: 5px;
         align-items: center;
         margin-top: 20px;
-        border: 1px solid blue;
     }
 
 
@@ -63,6 +62,7 @@
 
         .channel-item,
         .dm-item {
+
             display: flex;
             align-items: center;
             padding: 8px 15px;
@@ -121,6 +121,36 @@
                 }
             }
         }
+
+        #channel_adding_container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #000000;
+            cursor: pointer;
+
+            .channel_add {
+                color: inherit;
+
+                &:hover {
+                    transition: color 0.2s;
+                    color: #444DF2;
+                }
+            }
+
+            .channel_add_text {
+                color: inherit; // erbt die Farbe vom Container
+                font-size: 16px;
+                font-weight: 500;
+                transition: color 0.2s;
+            }
+
+
+            &:hover {
+                cursor: pointer;
+                color: #444DF2;
+            }
+        }
     }
 
     .no-channels,
@@ -131,63 +161,65 @@
         font-size: 14px;
     }
 
-    .workspace_container {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
+
+}
+
+.workspace_container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: transparent !important;
+
+    &.rotated {
+        transform: rotate(180deg);
+    }
+
+    top: 50vh;
+    left: -120px;
+    width: 300px;
+    height: 56px;
+    gap: 20px;
+    rotate: -90deg;
+    padding: 10px;
+    background-color: #ffffff;
+
+
+
+    h3 {
+        color: #000000;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0;
+        white-space: nowrap;
         background-color: #ffffff;
 
-        &.rotated {
-            transform: rotate(180deg);
-        }
-
-        top: 50vh;
-        left: -120px;
-        width: 300px;
-        height: 56px;
-        gap: 20px;
-        rotate: -90deg;
-        padding: 10px;
-        background-color: #ffffff;
 
 
+    }
 
+    .workspace_menu_icon {
+        flex-shrink: 0;
+        rotate: 90deg;
+        color: #000000;
+        cursor: pointer;
+        transition: fill 100ms ease-in;
+    }
+
+    &:hover {
         h3 {
-            color: #000000;
-            font-size: 20px;
-            font-weight: 500;
-            margin: 0;
-            white-space: nowrap;
-            background-color: #ffffff;
-
-
-
+            cursor: pointer;
+            color: #444DF2;
         }
 
         .workspace_menu_icon {
-            flex-shrink: 0;
-            rotate: 90deg;
-            color: #000000;
+
             cursor: pointer;
-            transition: fill 100ms ease-in;
-        }
+            color: #444DF2;
 
-        &:hover {
-            h3 {
-                cursor: pointer;
-                color: #444DF2;
-            }
-
-            .workspace_menu_icon {
-
-                cursor: pointer;
-                color: #444DF2;
-
-
-            }
 
         }
 
     }
+
 }

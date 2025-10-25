@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChannelComponent } from './channel.component';
 
-describe('ChannelComponent', () => {
+describe('MainboardComponent', () => {
   let component: ChannelComponent;
   let fixture: ComponentFixture<ChannelComponent>;
 
@@ -11,7 +11,7 @@ describe('ChannelComponent', () => {
       imports: [ChannelComponent]
     })
     .compileComponents();
-
+    
     fixture = TestBed.createComponent(ChannelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { DialogPosition, MatDialog } from "@angular/material/dialog";
-import { MenuDialogComponent } from "../../main-content/header/menu-dialog/menu-dialog.component";
+import { MenuDialogComponent } from "../../main-content/header/menue-dialog/menue-dialog.component";
 import { DialogShowUserComponent } from "../components/dialogs/dialog-show-user/dialog-show-user.component";
 import { User } from "../models/user.class";
 import { Channel } from "../models/channel.class";

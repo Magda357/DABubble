@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
-import { MenueComponent } from './menue/menue.component';
+import { MenueComponent } from '../menue/menue.component';
 import { User } from '../../shared/models/user.class';
-import { UserService } from '../shared/firebase-services/user.service';
+import { UserService } from '../../shared/firebase-services/user.service';
 import { Subscription, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MembershipService } from '../shared/firebase-services/membership.service';
+import { MembershipService } from '../../shared/firebase-services/membership.service';
 import { Membership } from '../../shared/models/membership.class';
 import { ChannelService } from '../../shared/firebase-services/channel.service';
 import { Channel } from '../../shared/models/channel.class';
@@ -23,8 +23,8 @@ import { slideInUpAnimationSlow, slideInleftAnimationSlow } from '../../shared/s
   selector: 'app-main-content',
   standalone: true,
   imports: [HeaderComponent, MenueComponent, CommonModule,],
-  templateUrl: './main-content.component.html',
-  styleUrl: './main-content.component.scss',
+  templateUrl: '../main-content.component.html',
+  styleUrl: '../main-content.component.scss',
   animations: [
     slideInUpAnimationSlow,
     slideInleftAnimationSlow
@@ -124,5 +124,4 @@ export class MainContentComponent implements OnInit {
   }
 
 }
-export { ChannelComponent };
 

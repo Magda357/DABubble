@@ -50,15 +50,17 @@ body {
 
     #channels {
 
-
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
         height: auto;
         padding: 5px;
         align-items: center;
         margin-top: 20px;
+
+
 
         .channels-header {
             display: flex;
@@ -71,14 +73,17 @@ body {
                 margin: 0;
                 white-space: nowrap;
                 background-color: #ffffff;
-
-
             }
 
             &:hover,
             h3:hover {
                 cursor: pointer;
                 color: #444DF2;
+            }
+
+            .arrow_list_show,
+            .arrow_list_hidden {
+                margin-top: 8px;
             }
 
 
@@ -93,7 +98,6 @@ body {
                 color: #444DF2;
             }
         }
-
 
     }
 
@@ -145,6 +149,11 @@ body {
                 flex: 1;
                 font-size: 14px;
                 color: #333;
+
+                &:hover {
+                    color: #444DF2;
+                    cursor: pointer;
+                }
             }
 
             .member-count {
@@ -167,10 +176,14 @@ body {
             }
 
             .user-status {
-                width: 8px;
-                height: 8px;
+                position: absolute;
+                display: flex;
+                margin-top: 30px;
+                left: 90px;
+                top: px;
+                width: 10px;
+                height: 10px;
                 border-radius: 50%;
-                margin-left: auto;
 
                 &.online {
                     background-color: #4CAF50;

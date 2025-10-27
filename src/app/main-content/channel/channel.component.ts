@@ -12,7 +12,10 @@ import { Channel } from '../../shared/models/channel.class';
 import { DataService } from '../../shared/services/data.service';
 import { PositionService } from '../../shared/services/position.service';
 import { CommonModule } from '@angular/common';
-import { slideInUpAnimationSlow, slideInleftAnimationSlow } from '../../shared/services/animations';
+import {
+  slideInUpAnimationSlow,
+  slideInleftAnimationSlow,
+} from '../../shared/services/animations';
 
 /**
  * Represents the main content area of the application, including the header, menu, and channel components.
@@ -22,14 +25,10 @@ import { slideInUpAnimationSlow, slideInleftAnimationSlow } from '../../shared/s
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [HeaderComponent, MenueComponent, CommonModule,],
+  imports: [HeaderComponent, MenueComponent, CommonModule],
   templateUrl: '../main-content.component.html',
   styleUrl: '../main-content.component.scss',
-  animations: [
-    slideInUpAnimationSlow,
-    slideInleftAnimationSlow
-
-  ],
+  animations: [slideInUpAnimationSlow, slideInleftAnimationSlow],
 })
 export class MainContentComponent implements OnInit {
   users: User[] = [];
@@ -55,49 +54,55 @@ export class MainContentComponent implements OnInit {
     private membershipService: MembershipService,
     private channelService: ChannelService,
     private dataService: DataService,
-    private positionService: PositionService,
+    private positionService: PositionService
   ) {
-
     this.currentUser = this.dataService.currentUser;
 
     // Subscribe to users and channels data
-    this.usersSubscription = this.userService.users$.subscribe(users => {
+    this.usersSubscription = this.userService.users$.subscribe((users) => {
       this.users = users;
       this.dataService.setUsers(users);
     });
 
-    this.channelsSubscription = this.channelService.channels$.subscribe(channels => {
-      this.channels = channels;
-      this.dataService.setChannels(channels);
-    });
+    this.channelsSubscription = this.channelService.channels$.subscribe(
+      (channels) => {
+        this.channels = channels;
+        this.dataService.setChannels(channels);
+      }
+    );
 
     // Subscribe to user memberships if currentUser is available
     if (this.currentUser) {
       this.membershipService.getUserMemberships(this.currentUser.id);
-      this.userMembershipSubscription = this.membershipService.userMemberships$.subscribe(userMemberships => {
-        this.userMemberships = userMemberships;
-      });
+      this.userMembershipSubscription =
+        this.membershipService.userMemberships$.subscribe((userMemberships) => {
+          this.userMemberships = userMemberships;
+        });
     }
   }
 
   /**
-* Initializes the component by subscribing to user channels and manage responsive window visibility.
-*/
+   * Initializes the component by subscribing to user channels and manage responsive window visibility.
+   */
   ngOnInit() {
     this.subscribeToUserChannels();
 
-    this.positionService.isResponsiveWindowVisible('menu').subscribe(isVisible => {
-      this.isMenuVisible = isVisible;
-    });
+    this.positionService
+      .isResponsiveWindowVisible('menu')
+      .subscribe((isVisible) => {
+        this.isMenuVisible = isVisible;
+      });
 
-    this.positionService.isResponsiveWindowVisible('channel').subscribe(isVisible => {
-      this.isChannelVisible = isVisible;
-    });
+    this.positionService
+      .isResponsiveWindowVisible('channel')
+      .subscribe((isVisible) => {
+        this.isChannelVisible = isVisible;
+      });
   }
 
   /**
-     * Cleans up the component by unsubscribing from the data.
-     */
+   * Cleans up the component by unsubscribing from the data.
+   */
   ngOnDestroy() {
     this.usersSubscription?.unsubscribe();
     this.userMembershipSubscription?.unsubscribe();
@@ -106,22 +111,26 @@ export class MainContentComponent implements OnInit {
   }
 
   /**
-    * Subscribes to the channels that the current user is a member of.
-    */
+   * Subscribes to the channels that the current user is a member of.
+   */
   private subscribeToUserChannels() {
     const subscription = combineLatest([
       this.membershipService.userMemberships$,
-      this.channelService.channels$
-    ]).pipe(
-      map(([memberships, channels]) => {
-        return channels.filter(channel => memberships.some(membership => membership.channelID === channel.id));
-      })
-    ).subscribe(filteredChannels => {
-      this.dataService.setCurrentUserChannels(filteredChannels);
-    });
+      this.channelService.channels$,
+    ])
+      .pipe(
+        map(([memberships, channels]) => {
+          return channels.filter((channel) =>
+            memberships.some(
+              (membership) => membership.channelID === channel.id
+            )
+          );
+        })
+      )
+      .subscribe((filteredChannels) => {
+        this.dataService.setCurrentUserChannels(filteredChannels);
+      });
 
     this.userChannelsSubscription.add(subscription);
   }
-
 }
-

@@ -1,6 +1,6 @@
 *,
 body {
-    background-color: #ECEEFE;
+    /*  background-color: #ECEEFE;*/
     font-family: 'Nunito', sans-serif;
 }
 
@@ -16,4 +16,21 @@ body {
     src: url('/fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+}
+
+/* Für Webkit-Browser (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 8px;
+    background: #ECEEFE;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #797EF3;
+    border-radius: 8px;
+}
+
+/* Für Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #797EF3 #ECEEFE;
 }

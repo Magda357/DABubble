@@ -1,0 +1,83 @@
+<section id="login_container">
+    <header>
+        <img src="/images/logo.svg" alt="DABubble Logo">
+
+        <div id="create_konto_container">
+            <span id="text">Neu bei DABubble?</span>
+            <span id="konto_create">Konto erstellen</span>
+        </div>
+    </header>
+
+
+    <div id="form_container">
+        <h2>Anmeldung</h2>
+        <p>
+            Wir empfehlen dir, die Email-Adresse zu nutzen, die <br>
+            du bei der Arbeit verwendest.
+        </p>
+
+        <form (ngSubmit)="login()" #loginForm="ngForm">
+
+            <div class="mail_input_wrapper">
+                <img id="mail_icon" src="/images/login/mail.png" alt="mail-icon">
+                <input type="email" placeholder="Beispiel@mail.com" name="email" [(ngModel)]="email" required
+                    #emailRef="ngModel" class="email-input" [ngClass]="{
+             invalid: emailRef.invalid && (emailRef.touched || loginForm.submitted)
+           }" />
+                <div class="field-error-message"
+                    *ngIf="emailRef.errors?.['required'] && (emailRef.touched || loginForm.submitted)">
+                    *E-Mail ist erforderlich
+                </div>
+                <div class="field-error-message"
+                    *ngIf="emailRef.errors?.['email'] && (emailRef.touched || loginForm.submitted)">
+                    *Bitte eine gültige E-Mail eingeben
+                </div>
+            </div>
+
+            <div class="password_input_wrapper">
+                <img id="lock" src="/images/login/lock.png" alt="lock-icon">
+                <input [type]="passwordVisible ? 'text' : 'password'" placeholder="Password" name="password"
+                    [(ngModel)]="password" required #passwordRef="ngModel" class="password-input" [ngClass]="{
+             invalid: passwordRef.invalid && (passwordRef.touched || loginForm.submitted)
+           }" />
+                <img src="/images/login/visibility_off.svg" alt="Password unvisible icon" *ngIf="!passwordVisible"
+                    (click)="togglePasswordVisibility()" class="password-toggle-icon">
+                <img src="/images/login/visibility.svg" alt="Password visible icon" *ngIf="passwordVisible"
+                    (click)="togglePasswordVisibility()" class="password-toggle-icon">
+                <div class="field-error-message"
+                    *ngIf="passwordRef.errors?.['required'] && (passwordRef.touched || loginForm.submitted)">
+                    *Passwort ist erforderlich
+                </div>
+            </div>
+
+            <span id="pass_forget_text">Password vergessen?</span> <br>
+
+            <div class="linie-container">
+                <span id="horiz_linie"></span>
+                <span id="text_oder"> ODER</span>
+            </div>
+
+            <button id="google_button"><img src="/images/login/Google.png" alt=""><span id="with_google_reg">Anmelden
+                    mit Google</span>
+            </button>
+
+            <div id="buttons">
+                <button id="login_button"> Anmelden </button>
+                <button id="gast_login">Gäste-Login </button>
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+
+
+
+    <footer>
+
+        <span>Impressum </span>
+        <span>Datenschutz </span>
+    </footer>
+</section>

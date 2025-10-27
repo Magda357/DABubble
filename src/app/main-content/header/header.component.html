@@ -7,10 +7,20 @@
             <img src="/images/search.svg" alt="Search icon">
         </div>
 
-        <div id="user_space">
+        <div id="user_space" (click)="toggleUserMenu()">
             <span id="user_name">Frederik Beck</span>
             <img src="/images/Profile bild.svg" alt="User Bild">
             <img src="/images/arrow-down.svg" alt="Arrow down">
+            <!--Burger-Menü-->
+            <div class="user-menu-modal" *ngIf="showUserMenu" (click)="$event.stopPropagation()">
+                <div class="modal-backdrop" (click)="closeUserMenu()"></div>
+                <div class="user-menu-content">
+                    <ul>
+                        <li (click)="openProfile()">Profil</li>
+                        <li (click)="logOut()">Log out</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </div>

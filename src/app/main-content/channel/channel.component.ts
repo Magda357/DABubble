@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
-import { MenueComponent } from '../menue/menue.component';
 import { User } from '../../shared/models/user.class';
 import { UserService } from '../../shared/firebase-services/user.service';
 import { Subscription, combineLatest } from 'rxjs';
@@ -16,6 +15,7 @@ import {
   slideInUpAnimationSlow,
   slideInleftAnimationSlow,
 } from '../../shared/services/animations';
+import { SharedComponent } from '../../shared/shared.component';
 
 /**
  * Represents the main content area of the application, including the header, menu, and channel components.
@@ -25,7 +25,7 @@ import {
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [HeaderComponent, MenueComponent, CommonModule],
+  imports: [HeaderComponent, CommonModule, SharedComponent],
   templateUrl: '../main-content.component.html',
   styleUrl: '../main-content.component.scss',
   animations: [slideInUpAnimationSlow, slideInleftAnimationSlow],

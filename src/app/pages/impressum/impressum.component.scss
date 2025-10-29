@@ -25,6 +25,19 @@
             border: 1px groove #444DF2;
 
 
+            .arrow {
+                position: relative;
+                top: 90px;
+                left: 50px;
+                color: #333333;
+                display: flex;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: #444DF2;
+                }
+            }
+
             h1 {
                 font-size: 52px;
                 color: #444DF2;
@@ -46,14 +59,17 @@
                 margin: 10px 0;
             }
 
+            #imp_gen {
+
+                &:hover {
+                    transform: scale(1.05);
+                    text-decoration: underline;
+                }
+            }
 
             a {
                 color: #444DF2;
                 text-decoration: none;
-
-                &:hover {
-                    transform: scale(1.05);
-                }
             }
         }
     }

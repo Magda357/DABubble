@@ -1,6 +1,14 @@
-*,
+:root {
+    --primary-color: #797EF3;
+    --secondary-color: #444DF2;
+    --background-color: #ECEEFE;
+    --text-color: #000000;
+}
+
+
+
 body {
-    /*  background-color: #ECEEFE;*/
+    background-color: var(--background-color);
     font-family: 'Nunito', sans-serif;
 }
 

@@ -11,6 +11,51 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+
+        .arrow {
+            position: fixed;
+            top: 90px;
+            left: 20%;
+            color: #333333;
+            display: flex;
+
+            &:hover {
+                transform: scale(1.2);
+                color: #444DF2;
+            }
+        }
+
+        h1 {
+            font-size: 52px;
+            color: #444DF2;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #333333;
+        }
+
+        ul,
+        p {
+            font-size: 18px;
+            color: #202020;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        h4 {
+            font-size: 24px;
+            color: #555555;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 28px;
+            color: #666666;
+            margin-top: 15px;
+        }
+
+
     }
 
 }

@@ -33,6 +33,10 @@ export class SharedComponent {
     this.loadUsers();
   }
 
+  onChannelCreated() {
+    this.loadChannels(); // Channels neu laden
+  }
+
   loadChannels() {
     this.chatService.getChannels().subscribe((channels) => {
       this.channels = channels;

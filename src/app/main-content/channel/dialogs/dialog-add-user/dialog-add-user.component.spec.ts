@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThreadsComponent } from './threads.component';
+import { DialogAddUserComponent } from './dialog-add-user.component';
 
-describe('ThreadsComponent', () => {
-  let component: ThreadsComponent;
-  let fixture: ComponentFixture<ThreadsComponent>;
+describe('DialogAddUserComponent', () => {
+  let component: DialogAddUserComponent;
+  let fixture: ComponentFixture<DialogAddUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThreadsComponent]
+      imports: [DialogAddUserComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ThreadsComponent);
+    fixture = TestBed.createComponent(DialogAddUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

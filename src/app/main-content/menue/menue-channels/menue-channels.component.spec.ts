@@ -11,7 +11,7 @@ describe('MenueChannelsComponent', () => {
       imports: [MenueChannelsComponent]
     })
     .compileComponents();
-
+    
     fixture = TestBed.createComponent(MenueChannelsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

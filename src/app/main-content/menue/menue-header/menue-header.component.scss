@@ -1,0 +1,28 @@
+@import './../menue.component.scss';
+
+header {
+    @include dFlex($jc: space-between);
+    width: 100%;
+
+    .menu-header-left {
+        @include dFlex($jc: flex-start, $gap: 15px);
+
+        .workspace-logo {
+            height: 60px;
+            width: auto;
+        }
+    
+        mat-card-title{
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+
+    .img-edit-workspace {
+        height: 40px;
+        width: 40px;
+
+        &:hover{
+        }
+    }
+}

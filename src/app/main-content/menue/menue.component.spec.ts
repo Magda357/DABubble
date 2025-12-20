@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenueComponent } from './menue.component';
 
-describe('MenueComponent', () => {
+describe('WorkspaceComponent', () => {
   let component: MenueComponent;
   let fixture: ComponentFixture<MenueComponent>;
 
@@ -11,7 +11,7 @@ describe('MenueComponent', () => {
       imports: [MenueComponent]
     })
     .compileComponents();
-
+    
     fixture = TestBed.createComponent(MenueComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
